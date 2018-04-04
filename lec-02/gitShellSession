@@ -1,0 +1,240 @@
+git clone git@github.com:ucsb-cs24-s18/git-demo-s18.git
+Cloning into 'git-demo-s18'...
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (4/4), done.
+MacBook-Pro-5:cs24 diba$ ls
+PRIVATE-CS24-s18-gradescope-lab00	cs24-s18-starter-code
+PRIVATE-CS24-s18-gradescope-lab01	git-demo-s18
+PRIVATE-lab00-solutions			lab00_jgaucho
+PRIVATE-lab01-solutions			test_diff.py
+cs24-s18-lectures
+MacBook-Pro-5:cs24 diba$ cd git-demo-s18/
+MacBook-Pro-5:git-demo-s18 diba$ ls
+README.md
+MacBook-Pro-5:git-demo-s18 diba$ cat README.md 
+# git-demo-s18MacBook-Pro-5:git-demo-s18 diba$ vim README.md 
+MacBook-Pro-5:git-demo-s18 diba$ cd ../
+MacBook-Pro-5:cs24 diba$ ls
+PRIVATE-CS24-s18-gradescope-lab00
+PRIVATE-CS24-s18-gradescope-lab01
+PRIVATE-lab00-solutions
+PRIVATE-lab01-solutions
+cs24-s18-lectures
+cs24-s18-starter-code
+git-demo-s18
+lab00_jgaucho
+test_diff.py
+MacBook-Pro-5:cs24 diba$ cd git-demo-s18/
+MacBook-Pro-5:git-demo-s18 diba$ ls
+README.md
+MacBook-Pro-5:git-demo-s18 diba$ vim hello.cpp
+MacBook-Pro-5:git-demo-s18 diba$ cp ../
+.DS_Store
+PRIVATE-CS24-s18-gradescope-lab00/
+PRIVATE-CS24-s18-gradescope-lab01/
+PRIVATE-lab00-solutions/
+PRIVATE-lab01-solutions/
+cs24-s18-lectures/
+cs24-s18-starter-code/
+git-demo-s18/
+lab00_jgaucho/
+test_diff.py
+MacBook-Pro-5:git-demo-s18 diba$ cp ../
+.DS_Store
+PRIVATE-CS24-s18-gradescope-lab00/
+PRIVATE-CS24-s18-gradescope-lab01/
+PRIVATE-lab00-solutions/
+PRIVATE-lab01-solutions/
+cs24-s18-lectures/
+cs24-s18-starter-code/
+git-demo-s18/
+lab00_jgaucho/
+test_diff.py
+MacBook-Pro-5:git-demo-s18 diba$ cp ../cs24-s18-lectures/
+.git/       .gitignore  README.md   lec-01/
+MacBook-Pro-5:git-demo-s18 diba$ cp ../cs24-s18-lectures/lec-01/classes.cpp ./
+MacBook-Pro-5:git-demo-s18 diba$ ls
+README.md	classes.cpp
+MacBook-Pro-5:git-demo-s18 diba$ vim classes.cpp 
+MacBook-Pro-5:git-demo-s18 diba$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	classes.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-5:git-demo-s18 diba$ git add classes.cpp 
+MacBook-Pro-5:git-demo-s18 diba$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   classes.cpp
+
+MacBook-Pro-5:git-demo-s18 diba$ git commit -m "Added classes.cpp"
+[master 72be911] Added classes.cpp
+ 1 file changed, 32 insertions(+)
+ create mode 100644 classes.cpp
+MacBook-Pro-5:git-demo-s18 diba$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+MacBook-Pro-5:git-demo-s18 diba$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 734 bytes | 734.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:ucsb-cs24-s18/git-demo-s18.git
+   03b40e5..72be911  master -> master
+MacBook-Pro-5:git-demo-s18 diba$ ls
+README.md	classes.cpp
+MacBook-Pro-5:git-demo-s18 diba$ g++ classes.cpp 
+classes.cpp:27:12: error: 'name' is a private member of 'Employee'
+        secretary.name = "Rabbit";
+                  ^
+classes.cpp:17:9: note: declared private here
+        string name;
+               ^
+classes.cpp:28:12: error: 'name' is a private member of 'Employee'
+        president.name = "Turtle";
+                  ^
+classes.cpp:17:9: note: declared private here
+        string name;
+               ^
+classes.cpp:29:44: error: 'name' is a private member of 'Employee'
+        cout<< " Name of secretary: "<< secretary.name<<endl;
+                                                  ^
+classes.cpp:17:9: note: declared private here
+        string name;
+               ^
+classes.cpp:30:44: error: 'name' is a private member of 'Employee'
+        cout<< " Name of president: "<< president.name<<endl;
+                                                  ^
+classes.cpp:17:9: note: declared private here
+        string name;
+               ^
+4 errors generated.
+MacBook-Pro-5:git-demo-s18 diba$ g++ classes.cpp 
+classes.cpp:29:44: error: 'name' is a private member of 'Employee'
+        cout<< " Name of secretary: "<< secretary.name<<endl;
+                                                  ^
+classes.cpp:17:9: note: declared private here
+        string name;
+               ^
+classes.cpp:30:44: error: 'name' is a private member of 'Employee'
+        cout<< " Name of president: "<< president.name<<endl;
+                                                  ^
+classes.cpp:17:9: note: declared private here
+        string name;
+               ^
+2 errors generated.
+MacBook-Pro-5:git-demo-s18 diba$ g++ classes.cpp 
+Undefined symbols for architecture x86_64:
+  "Employee::getName()", referenced from:
+      _main in classes-78b58c.o
+  "Employee::setName(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >)", referenced from:
+      _main in classes-78b58c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+MacBook-Pro-5:git-demo-s18 diba$ g++ classes.cpp 
+MacBook-Pro-5:git-demo-s18 diba$ ./a.out 
+ Name of secretary: Rabbit
+ Name of president: Turtle
+MacBook-Pro-5:git-demo-s18 diba$ git add .
+MacBook-Pro-5:git-demo-s18 diba$ git commit -m "changed the access specifiers of Employee"
+[master 12f14da] changed the access specifiers of Employee
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+MacBook-Pro-5:git-demo-s18 diba$ git add .
+MacBook-Pro-5:git-demo-s18 diba$ git commit -m "added methods related to salary" 
+[master 0172225] added methods related to salary
+ 1 file changed, 8 insertions(+)
+MacBook-Pro-5:git-demo-s18 diba$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+MacBook-Pro-5:git-demo-s18 diba$ git log
+commit 0172225840868b8c5448f23220baab46d6713829 (HEAD -> master)
+Author: Diba Mirza <dimirza@cs.ucsb.edu>
+Date:   Wed Apr 4 10:33:29 2018 -0700
+
+    added methods related to salary
+
+commit 12f14dac222dbb82cace520fa4e7388ceb4cfc66
+Author: Diba Mirza <dimirza@cs.ucsb.edu>
+Date:   Wed Apr 4 10:31:01 2018 -0700
+
+    changed the access specifiers of Employee
+
+commit 72be911113a7e51eaf8a88cf5a671324b9a6a0ba (origin/master, origin/HEAD)
+Author: Diba Mirza <dimirza@cs.ucsb.edu>
+Date:   Wed Apr 4 10:01:33 2018 -0700
+
+    Added classes.cpp
+
+commit 03b40e5391c4a677b8edd7c94fe4d7ec0d5e655b
+Author: Diba Mirza <dimirza@cs.ucsb.edu>
+Date:   Wed Apr 4 09:40:22 2018 -0700
+
+    Initial commit
+MacBook-Pro-5:git-demo-s18 diba$ 
+MacBook-Pro-5:git-demo-s18 diba$ git push 
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 785 bytes | 785.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To github.com:ucsb-cs24-s18/git-demo-s18.git
+   72be911..0172225  master -> master
+MacBook-Pro-5:git-demo-s18 diba$ git add .
+MacBook-Pro-5:git-demo-s18 diba$ git commit -m "lec 02"
+[master 8c3b45f] lec 02
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+MacBook-Pro-5:git-demo-s18 diba$ git push origin master
+To github.com:ucsb-cs24-s18/git-demo-s18.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:ucsb-cs24-s18/git-demo-s18.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+MacBook-Pro-5:git-demo-s18 diba$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:ucsb-cs24-s18/git-demo-s18
+   0172225..599c03b  master     -> origin/master
+Auto-merging classes.cpp
+Merge made by the 'recursive' strategy.
+ classes.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+MacBook-Pro-5:git-demo-s18 diba$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 598 bytes | 598.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To github.com:ucsb-cs24-s18/git-demo-s18.git
+   599c03b..a25dca0  master -> master
+MacBook-Pro-5:git-demo-s18 diba$ git add .
+MacBook-Pro-5:git-demo-s18 diba$ git commit -m "lec 02"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+MacBook-Pro-5:git-demo-s18 diba$ 
