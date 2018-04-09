@@ -27,8 +27,8 @@ public:
 	// defined in the class
 
 	Player(string playerName); // Parametrized constructor
-	// If a parameterized constructor is defined
-	// then the compiler does not generate a default one
+	// If you write this, the compiler will not generate a 
+	// default constructor
 
 	void setName(string input); //modifier
 	string getName() const; // accessor
@@ -126,18 +126,22 @@ int main(){
 /* Summary
 1. classes = structs + methods
 2. Abstract data types = classes + information hiding
-3. When designing classes - identify the objects in your
-problem, write their attributes and behaviors.
+3. When designing classes - 
+* identify the objects in your problem, 
+* specify the attributes and behaviors of objects.
 The attributes are coded as the member variables
 The behaviors are coded as the public member function
-4. As you design your class, think about who will be using it
-and how (in our case we first wrote the code in main to figure this out)
-Keep the interfaces (public methods of the class) simple and minimal
-5. Keep information private and hidden as much as possible
+4. When designing your class think about who will use it
+and how (in our case we first wrote the code in main to 
+figure this out)
+Keep the interfaces (public methods of the class) 
+simple and minimal. At the same time, don't make each method
+too complicated.
+5. Keep information hidden (private) as much as possible
 The code in main should not directly access member variables
 - why is this important?
-6. Write a constructor (or multiple) to do any initial setup. This would
-reduce having to write methods more methods than you need
+6. Write a constructor (or multiple) to do any initial setup. 
+This would reduce having to write methods that are only invoked once!
 */ 
 
 
