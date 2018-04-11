@@ -1,8 +1,7 @@
-/ FILE: point.cpp
+// FILE: point.cpp
 // CLASS IMPLEMENTED: point (See point.h for documentation.)
 
 #include "point.h"
-
 
 point::point(double initial_x, double initial_y)
 {

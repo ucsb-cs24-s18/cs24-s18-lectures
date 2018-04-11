@@ -127,8 +127,8 @@ int main(){
 1. classes = structs + methods
 2. Abstract data types = classes + information hiding
 3. When designing classes - 
-* identify the objects in your problem, 
-* specify the attributes and behaviors of objects.
+	* identify the objects in your problem, 
+	* specify the attributes and behaviors of objects.
 The attributes are coded as the member variables
 The behaviors are coded as the public member function
 4. When designing your class think about who will use it

@@ -45,3 +45,4 @@ class point {
         double y; // y coordinate of this point
 };
 
+#endif
