@@ -39,10 +39,22 @@ class point {
         // CONSTANT MEMBER FUNCTIONS
         double get_x( ) const { return x; } 
         double get_y( ) const { return y; }
-        
+        friend void operator>>(istream& ins, point& p1);
+     //   bool operator==(const point p) const;
+
     private:
         double x; // x coordinate of this point
         double y; // y coordinate of this point
 };
+
+//Non-member functions
+
+bool operator==(const point p1, const point p2);
+point operator+(point p1, point p2);
+void operator<<(ostream& out, point p1);
+
+void operator>>(istream& ins, point& p1);
+
+
 
 #endif

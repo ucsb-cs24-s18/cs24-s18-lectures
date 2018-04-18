@@ -3,6 +3,34 @@
 
 #include "point.h"
 
+void operator<<(ostream& out, point p){
+    
+    out<<"("<<p.get_x()<<", "<<p.get_y()<<")"<<endl;
+    
+}
+
+void operator>>(istream& ins, point&.  p){
+    cout<<"Enter (x, y)"<<endl;
+
+    cin>>p.x>>p.y;
+
+}
+
+bool operator==(const point p1, const point p2){
+    return (p1.get_x()== p2.get_x()) && (p1.get_y()== p2.get_y());
+}
+
+point operator+(point p1, point p2){
+
+    return point(p1.get_x()+ p2.get_x(),p1.get_y()+ p2.get_y() );
+
+;
+}
+/*bool point::operator==(const point p) const{
+    return (x== p.x) && (y== p.y);
+
+}*/
+
 point::point(double initial_x, double initial_y)
 {
     x = initial_x;   // Constructor sets the point to a given position.
