@@ -7,16 +7,6 @@
 #include <iostream>
 using std::cout;
 
-// copy constructor
-IntList::IntList(const IntList& source) {
-    //IMPLEMENT THIS
-}
-
-// destructor deletes all nodes
-IntList::~IntList() {
-    //IMPLEMENT THIS
-}
-
 
 // return sum of values in list
 int IntList::sum() const {
@@ -44,30 +34,20 @@ void IntList::insertFirst(int value) {
     // IMPLEMENT
 }
 
-//Assignment operator should copy the list from the source
-//to this list, deleting/replacing any existing nodes
-IntList& IntList::operator=(const IntList& source){
-    //IMPLEMENT
-    return *this;
-}
-
 
 
 // DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
 
-// constructor sets up empty list
-IntList::IntList() : first(0) { }
-
 
 // append value at end of list
 void IntList::append(int value) {
-    if (first == 0) { // empty list
-        first = new Node;
-        first->info = value;
-        first->next = 0;
+    if (head == 0) { // empty list
+        head = new Node;
+        head->info = value;
+        head->next = 0;
     }
     else {
-        Node *n = first;
+        Node *n = head;
         while (n->next) // not last node yet
             n = n->next;
         n->next = new Node;
@@ -78,7 +58,7 @@ void IntList::append(int value) {
 
 // print values enclose in [], separated by spaces
 void IntList::print() const {
-    Node *n = first;
+    Node *n = head;
     cout << '[';
     while (n) {
         cout << n->info;
@@ -92,7 +72,7 @@ void IntList::print() const {
 // return count of values
 int IntList::count() const {
     int result = 0;
-    Node *n = first;
+    Node *n = head;
     while (n) {
         ++result;
         n = n->next;
