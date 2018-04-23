@@ -34,10 +34,19 @@ void IntList::insertFirst(int value) {
     // IMPLEMENT
 }
 
+<<<<<<< HEAD:lec-07/lab03-variation/intlist.cpp
+
+// DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
+
+// constructor sets up empty list
+IntList::IntList() : head(0),tail(0) { }
+
+=======
 
 
 // DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
 
+>>>>>>> 3eb9b612b680bcb65af56e71b1547927a329417d:lec-07/lab03/intlist.cpp
 
 // append value at end of list
 void IntList::append(int value) {
