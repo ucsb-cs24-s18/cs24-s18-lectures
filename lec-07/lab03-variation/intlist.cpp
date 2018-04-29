@@ -34,19 +34,51 @@ void IntList::insertFirst(int value) {
     // IMPLEMENT
 }
 
-<<<<<<< HEAD:lec-07/lab03-variation/intlist.cpp
 
 // DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
 
 // constructor sets up empty list
 IntList::IntList() : head(0),tail(0) { }
+IntList::~IntList() 
+{ 
+    clear();
+}
 
-=======
+IntList::IntList(IntList& source){
+
+    
+
+    head = source.head;
+    tail = source.tail;
+    //shallow copy is insufficient
+    
+    Node* tmp = source.head;
+    while(tmp){
+        append(tmp->info);
+        tmp=tmp->next;
+    }
 
 
-// DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
+}
+void IntList::operator=(const IntList& source){
+    //this// this is a keyword that is a self-pointer
+    if(&source == this)
+        return;
+    
 
->>>>>>> 3eb9b612b680bcb65af56e71b1547927a329417d:lec-07/lab03/intlist.cpp
+
+}
+void IntList::clear(){
+    
+    Node* n = head;
+    while(head){
+        n = head->next;
+        delete head;
+        head = n;
+
+    }
+
+}
 
 // append value at end of list
 void IntList::append(int value) {
@@ -54,14 +86,13 @@ void IntList::append(int value) {
         head = new Node;
         head->info = value;
         head->next = 0;
+        tail = head;
     }
     else {
-        Node *n = head;
-        while (n->next) // not last node yet
-            n = n->next;
-        n->next = new Node;
-        n->next->info = value;
-        n->next->next = 0;
+        tail->next = new Node;
+        tail->next->info = value;
+        tail->next->next = 0;
+        tail =  tail->next;
     }
 }
 
