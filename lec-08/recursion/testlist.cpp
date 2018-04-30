@@ -38,13 +38,13 @@ int main(int argc, char *argv[]) {
     int sum = list1.sum();
     cout << "   sum: " << sum << endl;
     cout << "   contains " << first << " ? "
-        << (list1.contains(first)? "yes" : "no") << endl;
+        << (list1.contains(first)==1? "yes" : "no") << endl;
     cout << "   contains " << second << " ? "
-        << (list1.contains(second)? "yes" : "no") << endl;
+        << (list1.contains(second)==1? "yes" : "no") << endl;
     cout << "   contains " << last << " ? "
-        << (list1.contains(last)? "yes" : "no") << endl;
+        << (list1.contains(last)==1? "yes" : "no") << endl;
     cout << "   contains " << sum << " ? "
-        << (list1.contains(sum)? "yes" : "no") << endl;
+        << (list1.contains(sum)==1? "yes" : "no") << endl;
     cout << "   max: " << list1.max() << endl;
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);

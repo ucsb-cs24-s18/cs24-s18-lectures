@@ -16,7 +16,17 @@ int IntList::sum() const {
 // returns true if value is in the list; false if not
 bool IntList::contains(int value) const {
 
-    return containsIterative(value); // REPLACE THIS NON-SOLUTION
+    return contains(head, value); // REPLACE THIS NON-SOLUTION
+}
+bool IntList::contains(Node* h, int value) const{
+
+    if(!h) return false;
+
+    if(h->info == value){
+        return true;
+    }
+    return contains(h->next, value);
+
 }
 
 

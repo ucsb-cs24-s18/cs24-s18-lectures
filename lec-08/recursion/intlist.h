@@ -29,7 +29,10 @@ private:
 
     // definition of Node structure (DO NOT CHANGE):
     class Node {
-        public:
+     public:
+        ~Node(){
+            delete next;
+        }
         int info;
         Node *next;
     };
@@ -37,6 +40,7 @@ private:
     Node* head; 
     Node* tail;
     bool containsIterative(int value) const;
+    bool contains(Node* h, int value) const;
 };
 
 #endif
