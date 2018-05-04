@@ -29,8 +29,8 @@ private:
     // definition of Node structure (DO NOT CHANGE):
     class Node {
         public:
-        int info;
-        Node *next;
+            int info;
+            Node *next;
     };
 
     Node* head; 

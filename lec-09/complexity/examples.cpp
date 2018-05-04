@@ -13,12 +13,12 @@ int sumArray(int arr[], int N){
 }
 
 /* Counting steps:
-  Initialize                      : 
-  Body of loop                    :
-  Loop  increment and check       : 
-  Number of iterations of the loop: 
-  Return statement                : 
-  Total: 
+  Initialize                      : 1
+  Body of loop                    : 2
+  Loop  increment and check       : 3
+  Number of iterations of the loop: N
+  Return statement                : 1
+  Total: 3+ 5N
 */
 
 
