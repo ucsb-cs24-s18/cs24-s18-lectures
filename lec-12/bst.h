@@ -5,23 +5,23 @@
 #define BST_H
 
 #include <iostream>
-
+template <class item>
 class BST {
 
  public:
     // ctor, dtor, insert and one print method already done in intbst.cpp:
     BST();                   // constructor
     ~BST();                  // destructor
-    bool insert(int value);     // insert value; return false if duplicate
+    bool insert(item value);     // insert value; return false if duplicate
     void printInOrder() const;       // print tree data in-order to cout
 
  private:
 
     struct Node {
-	int info;
+	item info;
 	Node *left, *right, * parent;
 	// useful constructor:
-    Node(int v=0) : info(v), left(0), right(0), parent(0) { }
+    Node(item v) : info(v), left(0), right(0), parent(0) { }
     };
 
     // just one instance variable (pointer to root node):
@@ -31,4 +31,5 @@ class BST {
 
 };
 
+#include "bst.cpp"
 #endif

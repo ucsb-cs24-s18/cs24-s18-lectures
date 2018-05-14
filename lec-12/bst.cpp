@@ -7,17 +7,20 @@
 
 // constructor sets up empty tree
 
-BST::BST() : root(0) { }
+template <class item>
+BST<item>::BST() : root(0) { }
 
 // destructor deletes all nodes
 
-BST::~BST() {
+template <class item>
+BST<item>::~BST() {
     clear(root);
 }
 
 // recursive helper for destructor
 
-void BST::clear(Node *n) {
+template <class item>
+void BST<item>::clear(Node *n) {
     if (n) {
 	clear(n->left);
 	clear(n->right);
@@ -27,7 +30,8 @@ void BST::clear(Node *n) {
 
 // insert value in tree; return false if duplicate
 
-bool BST::insert(int value) {
+template <class item>
+bool BST<item>::insert(item value) {
     Node* tmp = root;
     if(!root){
         root = new Node(value);
@@ -60,16 +64,16 @@ bool BST::insert(int value) {
     return false;
 }
 
-
-void BST::printInOrder() const{
+template <class item>
+void BST<item>::printInOrder() const{
     
     printInOrder(root);
     std::cout<<std::endl;
 
 } 
 
-
-void BST::printInOrder(Node *n) const{
+template <class item>
+void BST<item>::printInOrder(Node *n) const{
     if(n){
         printInOrder(n->left);
         std::cout<<n->info<<" ";
