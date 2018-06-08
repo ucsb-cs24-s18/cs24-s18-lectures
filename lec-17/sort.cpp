@@ -33,20 +33,57 @@ void selectionSort(vector<int>& a, int N){
 
 void heapSort(vector<int>& a, int N){
 	priority_queue<int, vector<int>, greater<int>> pq;
-	for(auto item: a){
-		pq.push(item); // O(logN)
+
+	for(auto item: a){  // N times
+		pq.push(item); // Bound the running time by O(logN)
 	}
-	// N*log(N)
+
+
 	int i =0;
-	while(!pq.empty()){
-		a[i] = pq.top(); // min of all the remaining elements O(1)
-		pq.pop();  // O(logN)
+	while(!pq.empty()){ // N times
+		a[i] = pq.top(); // O(1) 
+		pq.pop(); // Even though number of elements in pq is changing
+		          // Complexity of pop will change, bound it by O(logN)
 		i++;
-	}
-	//Nlog(N)
+	
+	}// N* (O(1)+ O(logN)) = N log(N)
+	/*
+	for(auto item: bst){
+		a[i] = item;
+	}*/
+
+
+	//Overall O(NlogN)
+	
 
 
 }
+
+
+void bstSort(vector<int>& a, int N){
+
+	set<int> bst; // Balanced BST given by STL
+	for(auto item: a){  // N times
+		bst.insert(item); // O(logN)
+	}
+
+	//O(NlogN)
+	
+
+	int i =0;
+	while(!bst.empty()){ // N times
+		a[i] = bst.min();  //O(logN)
+		bst.delete(a[i]); // cost to find + cost to delete
+		                  // O(logN) + O(logN) = O(logN)
+		i++;
+		
+	}	
+	// O(NlogN)
+	//Overall : O(NlogN)
+
+}
+
+
 
 
 
