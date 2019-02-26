@@ -1,7 +1,7 @@
 all: testbst
 
-testbst: testbst.cpp bst.cpp
-	g++ -o testbst testbst.cpp bst.cpp
+testbst: testbst.cpp
+	g++ -std=c++11 testbst.cpp -o testbst 
 
 clean:
 	rm *.o testbst

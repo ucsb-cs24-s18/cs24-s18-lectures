@@ -31,5 +31,5 @@ class BST {
 
 };
 
-#include "bst.cpp"
+#include "bst.template"
 #endif
